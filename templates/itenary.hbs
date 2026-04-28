@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .page {
+      width: 794px;
+      height: 1123px;
+      page-break-after: always;
+      position: relative;
+    }
+
+    /* COVER PAGE */
+    .cover {
+      background-image: url;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding-top: 300px;
+      color: black;
+    }
+
+    .cover h1 {
+      font-size: 60px;
+    }
+
+    .summary {
+      padding: 120px 60px;
+    }
+
+    .day {
+      padding: 120px 60px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- COVER PAGE -->
+<div class="page cover">
+  <h1>{{title}}</h1>
+{{!-- <p>Customer: {{customerName}}</p> --}}
+</div>
+
+<!-- ROUTE SUMMARY PAGE -->
+<div class="page summary">
+  <h2>Route Summary</h2>
+  {{#each routes}}
+    <p>{{from}} - {{to}}</p>
+  {{/each}}
+</div>
+
+<!-- DAY PAGES -->
+{{!-- {{#each days}}
+<div class="page day">
+  <h2>Day {{day}}</h2>
+  <p>{{from}} - {{to}}</p>
+</div>
+{{/each}} --}}
+{{!-- {{#if duration}}
+  <p>Total Duration: {{duration.days}} Days / {{duration.nights}} Nights</p>
+{{/if}} --}}
+
+</body>
+</html>
