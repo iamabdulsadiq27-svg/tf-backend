@@ -8,7 +8,16 @@ require("dotenv").config();
 const app = express();
 
 // ─── MIDDLEWARE ───────────────────────────────────────────────────────────────
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:8000",        // local dev
+    "http://localhost:3000",
+    "https://www.thetravelfond.com/",       // ← replace with your actual Hostinger domain
+    "https://www.thetravelfond.com"    // ← with www too
+  ],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
 // Serve uploaded media files as static assets at /uploads/*
